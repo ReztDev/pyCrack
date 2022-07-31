@@ -8,7 +8,7 @@ import argparse
 try:
     from halo import Halo
 except ImportError as error:
-    print("[!] Please install modules %s" % error[1])
+    print("[!] Please install modules %s" % error[0])
     sys.exit(0)
 
 class Verbose:
@@ -46,7 +46,8 @@ class CrackingModule(IDHash):
     def run_crack(self):
         self.output = Verbose()
         self.os_platform = platform.system()
-        self.output.mode_info("\nStarting crack password ...")
+        print()
+        self.output.mode_info("Starting crack password ...")
         self.output.mode_info("Running system on " + self.os_platform)
 
         if len(self.hash) == 32:
@@ -213,7 +214,7 @@ class CrackingModule(IDHash):
 def main():
     parser = argparse.ArgumentParser(
                         prog=sys.argv[0],
-                        description="Python Tools Single Attack Passwords Hashs",
+                        description="Python Tools Single Brute Force Passwords Hash",
                         formatter_class=lambda prog: argparse.HelpFormatter(prog, max_help_position=80, width=100)
                         )
     parser.add_argument('-p', '--pass', dest='password', help='specify password hash (ex: 0603e7963203fc757932e0d3d715b21d)')
