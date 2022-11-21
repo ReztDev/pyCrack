@@ -2,6 +2,7 @@
 import os
 import sys
 import time
+import codecs
 import hashlib
 import platform
 import argparse
@@ -68,7 +69,7 @@ class CrackingModule(IDHash):
 
     def MD5(self):
         try:
-            with open(self.word, "r") as dictionary:
+            with codecs.open(self.word, "r", encoding="utf-8", errors="ignore") as dictionary:
                 words = dictionary.readlines()
             hashed = {}
             try:
@@ -92,7 +93,7 @@ class CrackingModule(IDHash):
 
     def SHA1(self):
         try:
-            with open(self.word, "r") as dictionary:
+            with codecs.open(self.word, "r", encoding="utf-8", errors="ignore") as dictionary:
                 words = dictionary.readlines()
             hashed = {}
             try:
@@ -116,7 +117,7 @@ class CrackingModule(IDHash):
 
     def SHA224(self):
         try:
-            with open(self.word, "r") as dictionary:
+            with codecs.open(self.word, "r", encoding="utf-8", errors="ignore") as dictionary:
                 words = dictionary.readlines()
             hashed = {}
             try:
@@ -140,7 +141,7 @@ class CrackingModule(IDHash):
 
     def SHA256(self):
         try:
-            with open(self.word, "r") as dictionary:
+            with codecs.open(self.word, "r", encoding="utf-8", errors="ignore") as dictionary:
                 words = dictionary.readlines()
             hashed = {}
             try:
@@ -164,7 +165,7 @@ class CrackingModule(IDHash):
 
     def SHA384(self):
         try:
-            with open(self.word, "r") as dictionary:
+            with codecs.open(self.word, "r", encoding="utf-8", errors="ignore") as dictionary:
                 words = dictionary.readlines()
             hashed = {}
             try:
@@ -188,7 +189,7 @@ class CrackingModule(IDHash):
 
     def SHA512(self):
         try:
-            with open(self.word, "r") as dictionary:
+            with codecs.open(self.word, "r", encoding="utf-8", errors="ignore") as dictionary:
                 words = dictionary.readlines()
             hashed = {}
             try:
