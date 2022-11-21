@@ -9,7 +9,7 @@ import argparse
 try:
     from halo import Halo
 except ImportError as error:
-    print("[!] Please install modules %s" % error[0])
+    print("[!] Please install modules 'halo'")
     sys.exit(0)
 
 class Verbose:
