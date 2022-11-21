@@ -1,6 +1,6 @@
 # pyCrack
 
-Simple Brute Force Password
+Simple Brute Force Password for python3.x
 
 ## Support Hash Password:
 - MD5
