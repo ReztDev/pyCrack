@@ -12,6 +12,7 @@ except ImportError as error:
     print("[!] Please install modules 'halo'")
     sys.exit(0)
 
+    
 class Verbose:
     def __init__(self):
         self.process = Halo(spinner='dots')
