@@ -40,7 +40,6 @@ class IDHash(object):
             sys.stdout.flush()
         self.end_time = time.time()
         self.process.mode_info("Scanning completed!!")
-        self.process.mode_info("Time elapsed at %s seconds" % round(self.end_time - self.start_time))
 
 
 class CrackingModule(IDHash):
@@ -77,7 +76,7 @@ class CrackingModule(IDHash):
                 self.scanning_wordlist(words)
                 for word in words:
                     hspwd = hashlib.md5()
-                    hspwd.update(word[:-1])
+                    hspwd.update(word[:-1].encode('utf-8'))
                     value = hspwd.hexdigest()
                     hashed[word[:-1]] = value
                 for key, value in hashed.items():
@@ -101,7 +100,7 @@ class CrackingModule(IDHash):
                 self.scanning_wordlist(words)
                 for word in words:
                     hspwd = hashlib.sha1()
-                    hspwd.update(word[:-1])
+                    hspwd.update(word[:-1].encode('utf-8'))
                     value = hspwd.hexdigest()
                     hashed[word[:-1]] = value
                 for key, value in hashed.items():
@@ -125,7 +124,7 @@ class CrackingModule(IDHash):
                 self.scanning_wordlist(words)
                 for word in words:
                     hspwd = hashlib.sha224()
-                    hspwd.update(word[:-1])
+                    hspwd.update(word[:-1].encode('utf-8'))
                     value = hspwd.hexdigest()
                     hashed[word[:-1]] = value
                 for key, value in hashed.items():
@@ -149,7 +148,7 @@ class CrackingModule(IDHash):
                 self.scanning_wordlist(words)
                 for word in words:
                     hspwd = hashlib.sha256()
-                    hspwd.update(word[:-1])
+                    hspwd.update(word[:-1].encode('utf-8'))
                     value = hspwd.hexdigest()
                     hashed[word[:-1]] = value
                 for key, value in hashed.items():
@@ -173,7 +172,7 @@ class CrackingModule(IDHash):
                 self.scanning_wordlist(words)
                 for word in words:
                     hspwd = hashlib.sha384()
-                    hspwd.update(word[:-1])
+                    hspwd.update(word[:-1].encode('utf-8'))
                     value = hspwd.hexdigest()
                     hashed[word[:-1]] = value
                 for key, value in hashed.items():
@@ -197,7 +196,7 @@ class CrackingModule(IDHash):
                 self.scanning_wordlist(words)
                 for word in words:
                     hspwd = hashlib.sha512()
-                    hspwd.update(word[:-1])
+                    hspwd.update(word[:-1].encode('utf-8'))
                     value = hspwd.hexdigest()
                     hashed[word[:-1]] = value
                 for key, value in hashed.items():
